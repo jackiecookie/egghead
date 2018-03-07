@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TodoForm from './component/todo/todoForm'
 
 class App extends Component {
   constructor(){
@@ -30,9 +31,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="Todo-app">
-          <form>
-            <input type="text" onChange={this.handleInputChange}/>
-          </form>
+          <TodoForm handleInputChange = {this.handleInputChange} currentTodo = {this.state.currentTodo} />
           <div className="Todo-App">
             <ul>
               {this.state.todos.map(todo=>
