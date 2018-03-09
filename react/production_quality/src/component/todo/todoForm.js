@@ -1,12 +1,16 @@
 import React from 'react'
+import { PropTypes } from 'prop-types';
 
 
-function TodoForm(props) {
+export function TodoForm(props) {
     return (
-         <form>
+        <form>
             <input type="text" onChange={props.handleInputChange} defaultValue = {props.currentTodo}/>
-          </form>
+        </form>
     )
 }
 
-export default TodoForm;
+TodoForm.propTypes = {
+  currentTodo: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired
+}
